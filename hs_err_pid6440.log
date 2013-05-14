@@ -1,0 +1,221 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x0000000000000000, pid=6440, tid=7204
+#
+# JRE version: 6.0_43-b01
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (20.14-b01 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# C  0x0000000000000000
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000008f8b800):  JavaThread "pool-2-thread-1" [_thread_in_native, id=7204, stack(0x0000000009c50000,0x0000000009d50000)]
+
+siginfo: ExceptionCode=0xc0000005, ExceptionInformation=0x0000000000000008 0x0000000000000000
+
+Registers:
+RAX=0x0000000009f27e20, RBX=0x0000000002a71470, RCX=0x0000000000000002, RDX=0x0000000000000001
+RSP=0x0000000009d4e958, RBP=0x0000000000000001, RSI=0xffffffffffffffff, RDI=0x0000000000000001
+R8 =0x0000000000000000, R9 =0x0000000002a71490, R10=0x0000000000000002, R11=0x000000000000004d
+R12=0x0000000000000000, R13=0x0000000000000001, R14=0x0000000002a71380, R15=0x0000000000000000
+RIP=0x0000000000000000, EFLAGS=0x0000000000010202
+
+Top of Stack: (sp=0x0000000009d4e958)
+0x0000000009d4e958:   000007fefc1ed5d5 0000000002a71470
+0x0000000009d4e968:   ffffffffffffffff 0000502dc2efb854
+0x0000000009d4e978:   0000000009d4ebe0 0000000000000000
+0x0000000009d4e988:   000007fe00000001 0000000009d4eb20
+0x0000000009d4e998:   000000006da837d8 0000000002a713b0
+0x0000000009d4e9a8:   000000007723e4e8 72676f72505c3a43
+0x0000000009d4e9b8:   73656c6946206d61 646a5c6176614a5c
+0x0000000009d4e9c8:   345f302e362e316b 616a5c6e69625c33
+0x0000000009d4e9d8:   00006578652e6176 000000070000000b
+0x0000000009d4e9e8:   000000006d6b75a8 000000006de85f98
+0x0000000009d4e9f8:   0000005000000000 0000000000000000
+0x0000000009d4ea08:   0000000000000000 0000000000000002
+0x0000000009d4ea18:   0000000002a70000 0000000000000000
+0x0000000009d4ea28:   0000000000000098 0000000000000000
+0x0000000009d4ea38:   0000000000000002 0000000000000004
+0x0000000009d4ea48:   0000000000000001 00000000ff000000 
+
+Instructions: (pc=0x0000000000000000)
+0xffffffffffffffe0:   
+
+
+Register to memory mapping:
+
+RAX=0x0000000009f27e20 is an unknown value
+RBX=0x0000000002a71470 is an unknown value
+RCX=0x0000000000000002 is an unknown value
+RDX=0x0000000000000001 is an unknown value
+RSP=0x0000000009d4e958 is pointing into the stack for thread: 0x0000000008f8b800
+RBP=0x0000000000000001 is an unknown value
+RSI=0xffffffffffffffff is an unknown value
+RDI=0x0000000000000001 is an unknown value
+R8 =0x0000000000000000 is an unknown value
+R9 =0x0000000002a71490 is an unknown value
+R10=0x0000000000000002 is an unknown value
+R11=0x000000000000004d is an unknown value
+R12=0x0000000000000000 is an unknown value
+R13=0x0000000000000001 is an unknown value
+R14=0x0000000002a71380 is an unknown value
+R15=0x0000000000000000 is an unknown value
+
+
+Stack: [0x0000000009c50000,0x0000000009d50000],  sp=0x0000000009d4e958,  free space=1018k
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  java.net.PlainSocketImpl.socketCreate(Z)V+0
+j  java.net.PlainSocketImpl.create(Z)V+60
+j  java.net.Socket.createImpl(Z)V+16
+j  java.net.Socket.getImpl()Ljava/net/SocketImpl;+9
+j  java.net.Socket.setSoTimeout(I)V+32
+j  org.apache.maven.wagon.providers.http.httpclient.conn.scheme.PlainSocketFactory.connectSocket(Ljava/net/Socket;Ljava/net/InetSocketAddress;Ljava/net/InetSocketAddress;Lorg/apache/maven/wagon/providers/http/httpclient/params/HttpParams;)Ljava/net/Socket;+81
+j  org.apache.maven.wagon.providers.http.httpclient.impl.conn.DefaultClientConnectionOperator.openConnection(Lorg/apache/maven/wagon/providers/http/httpclient/conn/OperatedClientConnection;Lorg/apache/maven/wagon/providers/http/httpclient/HttpHost;Ljava/net/InetAddress;Lorg/apache/maven/wagon/providers/http/httpclient/protocol/HttpContext;Lorg/apache/maven/wagon/providers/http/httpclient/params/HttpParams;)V+241
+j  org.apache.maven.wagon.providers.http.httpclient.impl.conn.ManagedClientConnectionImpl.open(Lorg/apache/maven/wagon/providers/http/httpclient/conn/routing/HttpRoute;Lorg/apache/maven/wagon/providers/http/httpclient/protocol/HttpContext;Lorg/apache/maven/wagon/providers/http/httpclient/params/HttpParams;)V+133
+j  org.apache.maven.wagon.providers.http.httpclient.impl.client.DefaultRequestDirector.tryConnect(Lorg/apache/maven/wagon/providers/http/httpclient/impl/client/RoutedRequest;Lorg/apache/maven/wagon/providers/http/httpclient/protocol/HttpContext;)V+49
+j  org.apache.maven.wagon.providers.http.httpclient.impl.client.DefaultRequestDirector.execute(Lorg/apache/maven/wagon/providers/http/httpclient/HttpHost;Lorg/apache/maven/wagon/providers/http/httpclient/HttpRequest;Lorg/apache/maven/wagon/providers/http/httpclient/protocol/HttpContext;)Lorg/apache/maven/wagon/providers/http/httpclient/HttpResponse;+383
+j  org.apache.maven.wagon.providers.http.httpclient.impl.client.AbstractHttpClient.execute(Lorg/apache/maven/wagon/providers/http/httpclient/HttpHost;Lorg/apache/maven/wagon/providers/http/httpclient/HttpRequest;Lorg/apache/maven/wagon/providers/http/httpclient/protocol/HttpContext;)Lorg/apache/maven/wagon/providers/http/httpclient/HttpResponse;+344
+j  org.apache.maven.wagon.providers.http.httpclient.impl.client.AbstractHttpClient.execute(Lorg/apache/maven/wagon/providers/http/httpclient/client/methods/HttpUriRequest;Lorg/apache/maven/wagon/providers/http/httpclient/protocol/HttpContext;)Lorg/apache/maven/wagon/providers/http/httpclient/HttpResponse;+21
+j  org.apache.maven.wagon.shared.http4.AbstractHttpClientWagon.execute(Lorg/apache/maven/wagon/providers/http/httpclient/client/methods/HttpUriRequest;)Lorg/apache/maven/wagon/providers/http/httpclient/HttpResponse;+162
+j  org.apache.maven.wagon.shared.http4.AbstractHttpClientWagon.fillInputData(Lorg/apache/maven/wagon/InputData;)V+181
+j  org.apache.maven.wagon.StreamWagon.getInputStream(Lorg/apache/maven/wagon/resource/Resource;)Ljava/io/InputStream;+15
+j  org.apache.maven.wagon.StreamWagon.getIfNewer(Ljava/lang/String;Ljava/io/File;J)Z+29
+j  org.apache.maven.wagon.StreamWagon.get(Ljava/lang/String;Ljava/io/File;)V+4
+j  org.sonatype.aether.connector.wagon.WagonRepositoryConnector$GetTask.run()V+285
+j  org.sonatype.aether.util.concurrency.RunnableErrorForwarder$1.run()V+4
+j  java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Ljava/lang/Runnable;)V+66
+j  java.util.concurrent.ThreadPoolExecutor$Worker.run()V+33
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+=>0x0000000008f8b800 JavaThread "pool-2-thread-1" [_thread_in_native, id=7204, stack(0x0000000009c50000,0x0000000009d50000)]
+  0x0000000008c5a000 JavaThread "pool-3-thread-1" [_thread_in_native, id=10880, stack(0x0000000009ab0000,0x0000000009bb0000)]
+  0x0000000008e94800 JavaThread "pool-1-thread-2" [_thread_blocked, id=9468, stack(0x0000000009870000,0x0000000009970000)]
+  0x00000000093e1000 JavaThread "pool-1-thread-1" [_thread_blocked, id=9664, stack(0x0000000009650000,0x0000000009750000)]
+  0x0000000007792000 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=6048, stack(0x0000000008850000,0x0000000008950000)]
+  0x0000000007778800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=7048, stack(0x0000000008750000,0x0000000008850000)]
+  0x0000000007760800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=10536, stack(0x0000000008650000,0x0000000008750000)]
+  0x000000000775f000 JavaThread "Attach Listener" daemon [_thread_blocked, id=10160, stack(0x0000000008550000,0x0000000008650000)]
+  0x000000000775e800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=6504, stack(0x0000000008450000,0x0000000008550000)]
+  0x000000000770e000 JavaThread "Finalizer" daemon [_thread_blocked, id=10692, stack(0x0000000008350000,0x0000000008450000)]
+  0x0000000007708000 JavaThread "Reference Handler" daemon [_thread_blocked, id=5856, stack(0x0000000008250000,0x0000000008350000)]
+  0x00000000003cc800 JavaThread "main" [_thread_blocked, id=9268, stack(0x0000000003480000,0x0000000003580000)]
+
+Other Threads:
+  0x00000000076fe800 VMThread [stack: 0x0000000008150000,0x0000000008250000] [id=4676]
+  0x0000000007793800 WatcherThread [stack: 0x0000000008950000,0x0000000008a50000] [id=8028]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 37696K, used 27872K [0x00000007d5eb0000, 0x00000007d88c0000, 0x0000000800000000)
+  eden space 32320K, 82% used [0x00000007d5eb0000,0x00000007d78a8270,0x00000007d7e40000)
+  from space 5376K, 23% used [0x00000007d7e40000,0x00000007d7f80020,0x00000007d8380000)
+  to   space 5376K, 0% used [0x00000007d8380000,0x00000007d8380000,0x00000007d88c0000)
+ PSOldGen        total 86208K, used 0K [0x0000000781c00000, 0x0000000787030000, 0x00000007d5eb0000)
+  object space 86208K, 0% used [0x0000000781c00000,0x0000000781c00000,0x0000000787030000)
+ PSPermGen       total 21248K, used 17416K [0x000000077ca00000, 0x000000077dec0000, 0x0000000781c00000)
+  object space 21248K, 81% used [0x000000077ca00000,0x000000077db02200,0x000000077dec0000)
+
+Code Cache  [0x0000000003580000, 0x00000000037f0000, 0x0000000006580000)
+ total_blobs=374 nmethods=109 adapters=218 free_code_cache=49631040 largest_free_block=20352
+
+Dynamic libraries:
+0x0000000000400000 - 0x000000000042f000 	C:\Program Files\Java\jdk1.6.0_43\bin\java.exe
+0x00000000771f0000 - 0x0000000077399000 	C:\Windows\SYSTEM32\ntdll.dll
+0x0000000076fd0000 - 0x00000000770ef000 	C:\Windows\system32\kernel32.dll
+0x000007fefd3c0000 - 0x000007fefd42c000 	C:\Windows\system32\KERNELBASE.dll
+0x0000000074e90000 - 0x0000000074f17000 	C:\Windows\System32\SYSFER.DLL
+0x000007fefd8c0000 - 0x000007fefd99b000 	C:\Windows\system32\ADVAPI32.dll
+0x000007feff150000 - 0x000007feff1ef000 	C:\Windows\system32\msvcrt.dll
+0x000007fefd8a0000 - 0x000007fefd8bf000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007feff3d0000 - 0x000007feff4fd000 	C:\Windows\system32\RPCRT4.dll
+0x000007fef4a70000 - 0x000007fef4ad0000 	C:\PaperSecu\paperhk64.dll
+0x000007fefeaa0000 - 0x000007fefeb07000 	C:\Windows\system32\GDI32.dll
+0x00000000770f0000 - 0x00000000771ea000 	C:\Windows\system32\USER32.dll
+0x000007fefd510000 - 0x000007fefd51e000 	C:\Windows\system32\LPK.dll
+0x000007fefd9a0000 - 0x000007fefda69000 	C:\Windows\system32\USP10.dll
+0x000007fefeb90000 - 0x000007fefebbe000 	C:\Windows\system32\IMM32.DLL
+0x000007fefd6b0000 - 0x000007fefd7b9000 	C:\Windows\system32\MSCTF.dll
+0x000007fefd120000 - 0x000007fefd137000 	C:\Windows\system32\AMINIT64.DLL
+0x000007fef7730000 - 0x000007fef777f000 	C:\Windows\INCOPS3\icdcnl64.dll
+0x00000000743b0000 - 0x0000000074481000 	C:\Windows\system32\MSVCR100.dll
+0x000007fef5490000 - 0x000007fef54da000 	C:\Windows\INCOPS3\ICATCDLL64.dll
+0x0000000002470000 - 0x0000000002673000 	C:\Windows\system32\ole32.dll
+0x000007fef1210000 - 0x000007fef13ff000 	C:\Windows\pcdrm\NSCFA64.DLL
+0x000007fefc1d0000 - 0x000007fefc1dc000 	C:\Windows\system32\VERSION.dll
+0x000007fefd520000 - 0x000007fefd56d000 	C:\Windows\system32\WS2_32.dll
+0x000007fefea90000 - 0x000007fefea98000 	C:\Windows\system32\NSI.dll
+0x000007fefdd00000 - 0x000007fefea88000 	C:\Windows\system32\Shell32.dll
+0x0000000002970000 - 0x00000000029e1000 	C:\Windows\system32\SHLWAPI.dll
+0x000007fef22f0000 - 0x000007fef22fb000 	C:\Windows\pcdrm\NSCPE64.dll
+0x000007fef1f80000 - 0x000007fef1f99000 	C:\Windows\pcdrm\NFD0164.dll
+0x000007fefd140000 - 0x000007fefd14f000 	C:\Windows\system32\profapi.dll
+0x000007fef2df0000 - 0x000007fef2dfd000 	C:\Windows\pcdrm\NFD0264.dll
+0x000007fef1830000 - 0x000007fef1a31000 	C:\Windows\pcdrm\NSCCOR0364.DLL
+0x00000000773c0000 - 0x00000000773c7000 	C:\Windows\system32\psapi.dll
+0x000000006d8c0000 - 0x000000006e07c000 	C:\Program Files\Java\jdk1.6.0_43\jre\bin\server\jvm.dll
+0x000007fefaf60000 - 0x000007fefaf9b000 	C:\Windows\system32\WINMM.dll
+0x000000006d830000 - 0x000000006d83e000 	C:\Program Files\Java\jdk1.6.0_43\jre\bin\verify.dll
+0x000000006d450000 - 0x000000006d477000 	C:\Program Files\Java\jdk1.6.0_43\jre\bin\java.dll
+0x000000006d880000 - 0x000000006d892000 	C:\Program Files\Java\jdk1.6.0_43\jre\bin\zip.dll
+0x000007fefcff0000 - 0x000007fefd047000 	C:\Windows\system32\apphelp.dll
+0x000000006d6b0000 - 0x000000006d6c7000 	C:\Program Files\Java\jdk1.6.0_43\jre\bin\net.dll
+0x000007fefc990000 - 0x000007fefc9e5000 	C:\Windows\system32\mswsock.dll
+0x000007fefc980000 - 0x000007fefc987000 	C:\Windows\System32\wship6.dll
+0x000000006d6d0000 - 0x000000006d6dc000 	C:\Program Files\Java\jdk1.6.0_43\jre\bin\nio.dll
+0x000007fefc9f0000 - 0x000007fefca07000 	C:\Windows\system32\CRYPTSP.dll
+0x000007fefc6f0000 - 0x000007fefc737000 	C:\Windows\system32\rsaenh.dll
+0x000007fefc430000 - 0x000007fefc44e000 	C:\Windows\system32\USERENV.dll
+0x000007fefd050000 - 0x000007fefd05f000 	C:\Windows\system32\CRYPTBASE.dll
+0x000007fefbad0000 - 0x000007fefbae5000 	C:\Windows\system32\NLAapi.dll
+0x000007fef8c80000 - 0x000007fef8c95000 	C:\Windows\system32\napinsp.dll
+0x000007fef8c60000 - 0x000007fef8c79000 	C:\Windows\system32\pnrpnsp.dll
+0x000007fefc810000 - 0x000007fefc86b000 	C:\Windows\system32\DNSAPI.dll
+0x000007fef8c50000 - 0x000007fef8c5b000 	C:\Windows\System32\winrnr.dll
+0x000007fefc1c0000 - 0x000007fefc1c7000 	C:\Windows\System32\wshtcpip.dll
+0x000007fefa900000 - 0x000007fefa927000 	C:\Windows\system32\IPHLPAPI.DLL
+0x000007fefa8f0000 - 0x000007fefa8fb000 	C:\Windows\system32\WINNSI.DLL
+0x000007fef87b0000 - 0x000007fef87b8000 	C:\Windows\system32\rasadhlp.dll
+0x000007fefa370000 - 0x000007fefa3c3000 	C:\Windows\System32\fwpuclnt.dll
+0x000007fefc1e0000 - 0x000007fefc318000 	C:\Windows\system32\Anywall364.dll
+
+VM Arguments:
+jvm_args: -Dclassworlds.conf=D:\JavaSoftware\apache-maven-3.0.5\bin\..\bin\m2.conf -Dmaven.home=D:\JavaSoftware\apache-maven-3.0.5\bin\.. 
+java_command: org.codehaus.plexus.classworlds.launcher.Launcher release:clean release:perform -DconnectionUrl=scm:git:https://github.com/moschino/mm_test_repo1.git -Dusername=moschino -Dpassword=Dupajasia123
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.6.0_43
+PATH=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Java\jdk1.6.0_43\bin;D:\JavaSoftware\apache-maven-3.0.5\bin;C:\Program Files (x86)\Git\bin;D:\JavaSoftware\apache-tomcat-6.0.36\bin;C:\Program Files\MySQL\MySQL Server 5.5\bin;C:\GitStack\python;C:\GitStack\python\Scripts;C:\GitStack\php
+USERNAME=m.miszczak
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 Service Pack 1
+
+CPU:total 8 (4 cores per cpu, 2 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 8272428k(2092444k free), swap 16543004k(9751448k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (20.14-b01) for windows-amd64 JRE (1.6.0_43-b01), built on Mar  1 2013 01:52:33 by "java_re" with MS VC++ 8.0 (VS2005)
+
+time: Tue May 14 08:47:18 2013
+elapsed time: 3 seconds
+
