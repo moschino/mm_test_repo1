@@ -72,8 +72,9 @@
 				<version>2.4.1</version>
 				<configuration>
 					<!-- During release:perform, enable the "release" profile -->
-					<releaseProfiles>release</releaseProfiles>
-					<goals>prepare-package</goals>
+					<releaseProfiles>false</releaseProfiles>
+					<goals>deploy</goals>
+					<arguments>-PgenRelease</arguments>
 				</configuration>
 			</plugin>
 			<plugin>
