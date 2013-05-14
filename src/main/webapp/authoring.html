@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QTI</title>
+    <!-- Jquery datatables -->
+    <!--<style type="text/css" title="currentStyle">
+		@import "js/libs/datatable/css/demo_table.css";
+	    @import "js/libs/datatable/css/demo_page.css";
+		@import "js/libs/datatable/css/jquery.dataTables_themeroller.css";
+		@import "js/libs/datatable/css/demo_table_jui.css";
+	</style>-->
+    <link href="js/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="js/libs/datepicker/css/datepicker.css" rel="stylesheet" media="screen">
+    <link href="js/libs/select2/select2.css" rel="stylesheet" media="screen">
+    <link href="js/libs/datatable/css/bootstrap.dataTables.css" rel="stylesheet" media="screen">
+    <!-- wysiwyg -->
+    <!--<link href="js/libs/wysiwyg/css/bootstrap-wysihtml5-0.0.2.css" rel="stylesheet" media="screen">-->
+    <link href="css/style.css" rel="stylesheet" media="screen">
+
+</head>
+<body>
+	<div id="versionPlaceholder">
+		<small style="margin-left: 10px; position: absolute;">QTI Version: @version@</small>
+	</div>	
+    <div id="qti-authoring" class="container-fluid">
+        <div class="row-fluid">
+            <div id="qti-categories" class="span3 rounded tabbable">
+            </div>
+            <div class="span9">
+                <div id="qti-header" class="row rounded">
+                    <div id="qti-header-title" class="span8"></div>
+                    <div id="qti-header-actions" class="span4"></div>
+                </div>
+                <div id="messagePlaceholder"></div>
+                <div id="qti-content-area" class="row rounded"></div>
+            </div>
+        </div>
+    </div>
+    <div id="modalPlaceholder"></div>
+
+    <script src="js/libs/jquery/jquery-1.9.1.js"></script>
+    <!--<script src="js/libs/jquery/ui/jquery-ui.min.js"></script>-->
+    <script src="js/libs/jquery/ui/jquery-ui.js"></script>
+    <script src="js/libs/jquery/ui/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/libs/modernizr/modernizr.js"></script>
+    <script src="js/libs/datatable/jquery.dataTables.js"></script>
+    <script src="js/libs/datatable/dataTablePlugins.js"></script>
+    <script src="js/libs/datatable/tableTools.min.js"></script>
+    <script src="js/libs/datatable/bootstrap.dataTables.js"></script>
+    <script src="js/libs/bootstrap/js/bootstrap.js"></script>
+    <script src="js/libs/datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="js/libs/underscore/underscore.js"></script>
+    <script src="js/libs/backbone/backbone.js"></script>
+    <script src="js/libs/backbone/backbone.routefilter.js"></script>
+    <script src="js/libs/viewmanager/viewmanager.js"></script>
+    <script src="js/libs/select2/select2.js"></script>
+    <script src="js/libs/numeric/jquery.numeric.js"></script>
+    
+	<script src="js/libs/i18n/jquery.localisation.js"></script>
+
+    <!-- ckeditor -->
+    <!--<script src="js/libs/ckeditor/ckeditor.js"></script>-->
+
+    <script src="js/app.js"></script>
+    <script src="js/i18n/messages.js"></script>
+    <script src="js/consts/consts.js"></script>
+    <script src="js/routers/router.js"></script>
+    <script src="js/utils/utils.js"></script>
+    <script src="js/events/globalevents.js"></script>
+
+	<script type="text/javascript">$.localise('js/i18n/messages', { loadBase: true });</script>
+
+    <!-- use sripts order as shown below      
+	    <script src="js/models/ .js"></script>
+	    <script src="js/collections/ .js"></script>
+	    <script src="js/views/authoring/domain/ .js"></script>
+	    <script src="js/views/authoring/layout/ .js"></script>
+    -->
+    <!-- MODALS -->
+    <script src="js/models/modaldialogmodel.js"></script>
+    <script src="js/views/authoring/common/modaldialogview.js"></script>
+
+    <!-- CATEGORIES -->
+    <script src="js/models/categorymodel.js"></script>
+    <script src="js/collections/categoriescollection.js"></script>
+    <script src="js/views/authoring/categories/categoryview.js"></script>
+    <script src="js/views/authoring/categories/categoriescontainerview.js"></script>
+    <script src="js/views/authoring/categories/categoriesview.js"></script>
+    <script src="js/views/authoring/categories/categorysettingsview.js"></script>
+    
+    <script src="js/models/assessmentitemmodel.js"></script>
+    <script src="js/models/assessmenttestmodel.js"></script>
+    <script src="js/models/assessmentitemanswermodel.js"></script>
+    <script src="js/models/singlechoicemodel.js"></script>
+    <script src="js/models/multiplechoicemodel.js"></script>
+	<script src="js/models/truefalsemodel.js"></script>
+    <script src="js/models/ordermodel.js"></script>
+    <script src="js/models/keywordmodel.js"></script>
+    <script src="js/models/assessmentTestQuestionRowModel.js"></script>
+    <script src="js/collections/assessmentTestSectionQuestionsCollection.js"></script>
+    <script src="js/models/assessmentTestSectionModel.js"></script>
+    <script src="js/collections/assessmentitemanswerscollection.js"></script>
+    <script src="js/collections/assessmentitemscollection.js"></script>
+    <script src="js/collections/assessmenttestscollection.js"></script>
+    <script src="js/collections/keywordscollection.js"></script>
+    <script src="js/collections/assessmentTestSectionsCollection.js"></script>
+    <script src="js/views/authoring/domain/assesmentitemgeneralview.js"></script>
+    <script src="js/views/authoring/domain/assessmentitemview.js"></script>
+    <script src="js/views/authoring/domain/assesmentitemgeneralview.js"></script>
+    <script src="js/views/authoring/domain/assesmentitemoptionsview.js"></script>
+    <script src="js/views/authoring/domain/singlechoice/singlechoiceanswerview.js"></script>
+    <script src="js/views/authoring/domain/singlechoice/singlechoiceanswersview.js"></script>
+    <script src="js/views/authoring/domain/singlechoice/singlechoiceview.js"></script>
+    <script src="js/views/authoring/domain/multiplechoice/multiplechoiceanswerview.js"></script>
+    <script src="js/views/authoring/domain/multiplechoice/multiplechoiceanswersview.js"></script>
+    <script src="js/views/authoring/domain/multiplechoice/multiplechoiceview.js"></script>
+    <script src="js/views/authoring/domain/truefalse/truefalseanswerview.js"></script>
+    <script src="js/views/authoring/domain/truefalse/truefalseanswersview.js"></script>
+    <script src="js/views/authoring/domain/truefalse/truefalseview.js"></script>
+    <script src="js/views/authoring/domain/order/orderanswerview.js"></script>
+    <script src="js/views/authoring/domain/order/orderanswersview.js"></script>
+    <script src="js/views/authoring/domain/order/orderview.js"></script>
+    <script src="js/views/authoring/common/gridView.js"></script>
+    <script src="js/views/authoring/common/importFormView.js"></script>
+    <script src="js/views/authoring/domain/exportableview.js"></script>
+    <script src="js/views/authoring/domain/assessmentitemsview.js"></script>
+    <script src="js/views/authoring/domain/assessmenttestsview.js"></script>
+    <script src="js/views/authoring/layout/headertitleview.js"></script>
+    <script src="js/views/authoring/layout/headeractionsview.js"></script>
+    <script src="js/views/authoring/layout/newassessmentitemview.js"></script>
+    <script src="js/views/authoring/layout/assessmentTestSectionView.js"></script>
+    <script src="js/views/authoring/layout/assessmentTestSectionsView.js"></script>
+    <script src="js/views/authoring/layout/assessmentTestView.js"></script>
+    <script src="js/views/authoring/layout/searchView.js"></script>
+    <script src="js/views/authoring/layout/assessmentTestQuestionRowView.js"></script>
+
+    <script src="js/setup.js"></script>
+
+    <!-- DELIVERY -->
+    <script src="js/views/delivery/domain/assessmentitemanswerview.js"></script>
+    <script src="js/views/delivery/domain/assessmentitemanswersview.js"></script>
+    <script src="js/views/delivery/domain/assessmentitemview.js"></script>
+
+    <script src="js/views/delivery/domain/singlechoice/singlechoice.js"></script>
+    <script src="js/views/delivery/domain/multiplechoice/multiplechoice.js"></script>
+    <script src="js/views/delivery/domain/truefalse/truefalse.js"></script>
+</body>
+</html>
+
